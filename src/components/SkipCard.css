@@ -1,0 +1,49 @@
+.skip-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 1.5rem 1rem;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s, border 0.2s;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 180px;
+  animation: fadeIn 0.5s;
+}
+
+.skip-card.selected {
+  border: 2px solid #ffb300;
+  box-shadow: 0 4px 20px rgba(255,179,0,0.12);
+  transform: scale(1.03);
+}
+
+.skip-card:hover {
+  box-shadow: 0 4px 20px rgba(30,136,229,0.12);
+  transform: scale(1.03);
+}
+
+.skip-card h2 {
+  margin: 0 0 0.5rem 0;
+  color: #1976d2;
+}
+
+.skip-icons {
+  margin-top: auto;
+  display: flex;
+  gap: 1rem;
+}
+
+.icon.yes {
+  color: #43a047;
+}
+
+.icon.no {
+  color: #e53935;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
