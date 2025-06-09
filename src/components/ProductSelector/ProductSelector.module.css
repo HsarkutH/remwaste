@@ -1,0 +1,29 @@
+.selectorContainer {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+.title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #222;
+  text-align: center;
+}
+.productList {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: #e3e8f0 #fff;
+}
+.productList::-webkit-scrollbar {
+  height: 8px;
+}
+.productList::-webkit-scrollbar-thumb {
+  background: #e3e8f0;
+  border-radius: 4px;
+}

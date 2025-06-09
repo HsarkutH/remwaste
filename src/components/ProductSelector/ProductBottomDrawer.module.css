@@ -1,0 +1,150 @@
+.drawerOverlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 0;
+  pointer-events: all;
+  background: rgba(0,0,0,0.10);
+  padding-bottom: 0;
+  perspective: 1200px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 -4px 32px rgba(0,0,0,0.18);
+  min-width: 420px;
+  max-width: 98vw;
+  width: 540px;
+  padding: 32px 32px 24px 32px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.imageWrapper {
+  width: 210px;
+  min-width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productImage {
+  width: 200px;
+  height: 140px;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  background: #f6f8fa;
+}
+
+.details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.size {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #007bff;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 1.7em;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.closeBtn:hover {
+  color: #007bff;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.05em;
+  color: #333;
+}
+
+.continueBtn {
+  margin-top: 14px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 0;
+  border-radius: 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.continueBtn:hover {
+  background: #0056b3;
+}
+
+.totalText {
+  font-size: 0.98em;
+  font-weight: 400;
+  margin-left: 8px;
+  color: #e3e8f0;
+  background: #0056b3;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .card {
+    min-width: 0;
+    width: 98vw;
+    padding: 16px 4vw 14px 4vw;
+  }
+  .cardContent {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .imageWrapper {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 8px;
+    justify-content: center;
+  }
+  .productImage {
+    width: 90vw;
+    max-width: 260px;
+    height: 90px;
+  }
+}

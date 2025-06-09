@@ -1,46 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import Header from "./components/Header";
-import SkipOptions from "./components/SkipOptions";
-import SelectionBar from "./components/SelectionBar";
-import "./App.css";
+import React from "react";
+import HeaderStepper from "./components/HeaderStepper/HeaderStepper";
+import ProductSelector from "./components/ProductSelector/ProductSelector";
 
-export interface Skip {
-  id: number;
-  size: number;
-  hire_period_days: number;
-  price_before_vat: number;
-  vat: number;
-  allowed_on_road:boolean;
-  allows_heavy_waste: boolean;
-}
+const steps = [
+  "Postcode",
+  "Waste Type",
+  "Select Skip",
+  "Permit Check",
+  "Choose Date",
+  "Payment"
+];
 
-const POSTCODE = "NR32";
-
-function App() {
-  const [skips, setSkips] = useState<Skip[]>([]);
-  const [selectedSkip, setSelectedSkip] = useState<Skip | null>(null);
-
-  useEffect(() => {
-    fetch(
-      "https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft"
-    )
-      .then((res) => res.json())
-      .then((data) => setSkips(data));
-  }, []);
-
+const App: React.FC = () => {
   return (
-    <div className="app-bg">
-      <Header postcode={POSTCODE} onChangePostcode={() => alert("Change postcode!")} />
-      <main>
-        <SkipOptions
-          skips={skips}
-          selectedSkip={selectedSkip}
-          onSelect={setSelectedSkip}
-        />
-      </main>
-      <SelectionBar selectedSkip={selectedSkip} />
+    <div style={{ minHeight: "100vh", background: "#f6f8fa", padding: "32px 0" }}>
+      <HeaderStepper steps={steps} currentStep={2} />
+      <ProductSelector />
     </div>
   );
-}
+};
 
 export default App;
